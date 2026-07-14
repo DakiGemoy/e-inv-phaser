@@ -31,7 +31,9 @@ export default function VirtualControls() {
             <button className={activeSection ? "active" : ""}
                 onPointerDown ={() => {
                     InputManager.setAction(true);
-                    if(activeSection) {console.log("Opening section:", activeSection);}
+                    // if(activeSection) {console.log("Opening section:", activeSection);}
+
+                    EventBus.emit(GameEvents.OPEN_SECTION, activeSection);
                     }
                 }
                 onPointerUp={() => InputManager.setAction(false)}

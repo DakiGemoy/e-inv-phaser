@@ -17,6 +17,11 @@ export default class Player extends Phaser.GameObjects.Container {
 
     update(delta: number) {
         const deltaSecond = delta / 1000;
+        const input = InputManager.getState();
+
+        if (input.gameLocked){
+            return;
+        }
 
         if(InputManager.isLeftPressed() || InputManager.isRightPressed()) {
             this.bodyRect.setFillStyle(0xff5722);

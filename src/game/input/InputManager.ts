@@ -4,7 +4,8 @@ class InputManager{
     private state: InputState = {
         leftPressed: false,
         rightPressed: false,
-        actionPressed: false
+        actionPressed: false,
+        gameLocked: false
     }
 
     getState(): Readonly<InputState> {
@@ -23,6 +24,16 @@ class InputManager{
         this.state.actionPressed = value;
     }
 
+    lockGame(){
+        this.state.gameLocked = true;
+        this.reset;
+    }
+
+    unlockGame(){
+        this.state.gameLocked = false;
+        this.reset;
+    }
+
     isLeftPressed(){
         return this.state.leftPressed;
     }
@@ -39,7 +50,8 @@ class InputManager{
         this.state  = {
             leftPressed: false,
             rightPressed: false,
-            actionPressed: false
+            actionPressed: false,
+            gameLocked: false
         }
     }
 }
