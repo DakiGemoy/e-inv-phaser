@@ -8,7 +8,6 @@ import Player from "../objects/Player";
 import Sky from "../objects/Sky";
 import Ground from "../objects/Ground";
 import Tree from "../objects/Tree";
-import SectionMaker from "../objects/SectionMaker";
 import SectionManager from "../manager/SectionManager";
 import { SectionType } from "../sections/SectionType";
 import SectionMarker from "../sections/SectionMarker";
