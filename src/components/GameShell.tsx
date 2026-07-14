@@ -17,8 +17,10 @@ export default function GameShell() {
 
     useEffect(() => {
         const handler = (section: SectionData) => {
-            InputManager.lockGame();
-            setOpenedSection(section);
+            if(section != null){
+                InputManager.lockGame();
+                setOpenedSection(section);
+            }
         };
 
         EventBus.on(GameEvents.OPEN_SECTION, handler);

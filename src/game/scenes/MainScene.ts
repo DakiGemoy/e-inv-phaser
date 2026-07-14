@@ -33,11 +33,6 @@ export default class MainScene extends Phaser.Scene {
             new Tree(this, i, PLAYER_Y-10);
         }
 
-        // new SectionMaker(this, 1000, PLAYER_Y, "MAP");
-        // new SectionMaker(this, 2000, PLAYER_Y, "GALERI");
-        // new SectionMaker(this, 3000, PLAYER_Y, "RSVP");
-        // new SectionMaker(this, 4000, PLAYER_Y, "GIFT");
-
         //player
         this.player = new Player(this, 100, PLAYER_Y);
 

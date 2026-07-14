@@ -28,18 +28,16 @@ export default function VirtualControls() {
             >
                 ◀
             </button>
-            <button className={activeSection ? "active" : ""}
+            <button className={activeSection ? "action-active" : "action"}
                 onPointerDown ={() => {
-                    InputManager.setAction(true);
-                    // if(activeSection) {console.log("Opening section:", activeSection);}
-
-                    EventBus.emit(GameEvents.OPEN_SECTION, activeSection);
+                        InputManager.setAction(true);
+                        EventBus.emit(GameEvents.OPEN_SECTION, activeSection);
                     }
                 }
                 onPointerUp={() => InputManager.setAction(false)}
                 onPointerCancel={() => InputManager.setAction(false)}
             >
-                {activeSection ? "Open" : "Action"}
+                {activeSection ? "Buka" : "Buka"}
             </button>
             <button 
                 onPointerDown={() => InputManager.setRight(true)}

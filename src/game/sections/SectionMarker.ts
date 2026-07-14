@@ -3,7 +3,7 @@ import type { SectionData } from './SectionData';
 
 export default class SectionMarker {
     readonly data: SectionData;
-    readonly radius: number = 120;
+    readonly radius: number = 80;
     private box: Phaser.GameObjects.Rectangle;
     private label: Phaser.GameObjects.Text;
 

@@ -59,16 +59,21 @@ body {
 .controls button{
     width:70px;
     height:70px;
-    border:none;
-    border-radius:10%;
+    border: solid 5px black;
+    border-radius:25%;
     font-size:12px;
     font-weight:bold;
     transition: 0.2s;
 }
 
-.active-action{
-  background:#4CAF50;
-  color:white;
+.action {
+  opacity: 60%;
+  transform:scale(1.05);
+}
+
+.action-active{
+  background:#ffffff;
+  color:black;
   transform:scale(1.05);
 }
 

@@ -1,4 +1,4 @@
-import type { InputState } from "../../types/InputState";
+import type { InputState } from "../types/InputState";
 
 class InputManager{
     private state: InputState = {
