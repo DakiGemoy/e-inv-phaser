@@ -30,15 +30,13 @@ export default function GameShell() {
     
     return (
         <div className="game-shell">
-            <div>
-                <GameCanvas />
-                <VirtualControls />
-                {
-                    openedSection && (
-                        <SectionPopup section={openedSection} onClose={closePopup}/>
-                    )
-                }
-            </div>
+            <GameCanvas />
+            <VirtualControls />
+            {
+                openedSection && (
+                    <SectionPopup section={openedSection} onClose={closePopup}/>
+                )
+            }
         </div>
     );
 }
