@@ -4,11 +4,52 @@
     background: black;    
     opacity: 0;    
     pointer-events: none;    
-    transition: opacity 1000ms ease;
+    /* transition: opacity 1000ms ease; */
     z-index: 9999;
+
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(36, 1fr);
 }
 
 .visible {
     opacity: 1;
-    transition: opacity 1000ms ease;
+    /* transition: opacity 1000ms ease; */
+}
+
+.pixel{
+    background-color: white;
+    opacity: 0;
+}
+
+.pixel.show{
+    animation: pixelIn .35s forwards;
+}
+
+.pixel.showout{
+    animation: pixelOut .35s forwards;
+}
+
+@keyframes pixelIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pixelOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to{
+        opacity: 0;
+        transform: scale(0);
+    }
 }
