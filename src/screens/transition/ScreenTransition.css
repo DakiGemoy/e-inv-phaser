@@ -1,0 +1,14 @@
+.screen-transition {
+    position: fixed;
+    inset: 0;    
+    background: black;    
+    opacity: 0;    
+    pointer-events: none;    
+    transition: opacity 1000ms ease;
+    z-index: 9999;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 1000ms ease;
+}
