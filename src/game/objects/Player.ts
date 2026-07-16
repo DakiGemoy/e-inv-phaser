@@ -55,9 +55,9 @@ export default class Player extends Phaser.GameObjects.Container {
         }
 
         if(this.direction ==- 1){
-            this.sprite.setFlipX(false);
-        } else {
             this.sprite.setFlipX(true);
+        } else {
+            this.sprite.setFlipX(false);
         }
         
         //batas player (perlu didalami)
