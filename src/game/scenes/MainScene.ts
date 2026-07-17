@@ -11,6 +11,7 @@ import Tree from "../objects/Tree";
 import SectionManager from "../manager/SectionManager";
 import { SectionType } from "../sections/SectionType";
 import SectionMarker from "../sections/SectionMarker";
+import Cloud from "../objects/Cloud";
 
 export default class MainScene extends Phaser.Scene {
     private player!: Player;
@@ -27,10 +28,15 @@ export default class MainScene extends Phaser.Scene {
 
         new Sky(this);
         new Ground(this);
+        
+        for(let i=0; i<WORLD_WIDTH; i++){
+            if(i%900 === 0 && i>0){
+                new Tree(this, i, PLAYER_Y-55);
+            }
 
-        //tree
-        for(let i = 300; i < WORLD_WIDTH; i+=600) {
-            new Tree(this, i, PLAYER_Y-10);
+            if(i%400 === 0){
+                new Cloud(this,i);
+            }
         }
 
         //player
