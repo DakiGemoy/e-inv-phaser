@@ -46,10 +46,10 @@ export default function VirtualControls() {
                 onPointerDown ={() => {
                     InputManager.setAction(true);
                     EventBus.emit(GameEvents.OPEN_SECTION, activeSection);
+                    }
                 }
-            }
-            onPointerUp={() => InputManager.setAction(false)}
-            onPointerCancel={() => InputManager.setAction(false)}
+                onPointerUp={() => InputManager.setAction(false)}
+                onPointerCancel={() => InputManager.setAction(false)}
             >
                 <img src={buttonOpen_img} alt="Open" draggable={false} onContextMenu={(e)=>e.preventDefault()}/>
             </div>
