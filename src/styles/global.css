@@ -56,14 +56,27 @@ body {
   backdrop-filter: blur(5px);
 }
 
-.controls button{
-    width:70px;
-    height:70px;
-    border: solid 5px black;
-    border-radius:25%;
+.controls div{
     font-size:12px;
     font-weight:bold;
+    transition: 0.2s; 
+
+    display: flex;
+    padding: 5px;
     transition: 0.2s;
+    justify-content: center;
+}
+
+.controls div img {
+  width: 100%;
+}
+
+.rightPressed{
+  opacity: 75%;
+}
+
+.leftPressed{
+  opacity: 75%;
 }
 
 .action {
@@ -72,8 +85,6 @@ body {
 }
 
 .action-active{
-  background:#ffffff;
-  color:black;
   transform:scale(1.05);
 }
 
