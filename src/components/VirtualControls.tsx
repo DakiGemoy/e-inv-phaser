@@ -23,8 +23,10 @@ export default function VirtualControls() {
         };
     }, []);
 
+    const canvasWidth = document.querySelector("canvas");
+
     return (
-        <div className="controls">
+        <div className="controls" style={{"--control-width": `${canvasWidth?.clientWidth}px`} as React.CSSProperties}>
             <div className={arrowPressed === -1 ? "leftPressed" : ""}
                 onPointerDown={() => {
                     InputManager.setLeft(true);
