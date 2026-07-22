@@ -6,10 +6,12 @@ import type { SectionData } from "../game/sections/SectionData";
 import buttonL_img from "../assets/button_left.png";
 import buttonR_img from "../assets/button_right.png";
 import buttonOpen_img from "../assets/button_open.png";
+import { GAME_WIDTH } from "../game/config/GameConstant";
 
 export default function VirtualControls() {
     const [activeSection, setActiveSection] = useState<SectionData | null>(null);
     const [arrowPressed, setArrowPressed] = useState(0);
+    const [controlWidth, setControlWidth] = useState(GAME_WIDTH);
 
     useEffect(() => {
         const handler = (section: SectionData | null) => {
@@ -18,15 +20,28 @@ export default function VirtualControls() {
 
         EventBus.on(GameEvents.SECTION_CHANGED, handler);
 
+        const gameContainer = document.getElementById("game-container");
+
+        if (!gameContainer) return;
+
+        const mutationObserver = new MutationObserver(() => {
+                const canvas = gameContainer.querySelector("canvas");
+                if (!canvas) return;
+                setControlWidth(canvas.clientWidth)
+        });
+
+        mutationObserver.observe(gameContainer, {
+            childList: true,
+            subtree: true
+        });
+
         return () => {
             EventBus.off(GameEvents.SECTION_CHANGED, handler);
         };
     }, []);
 
-    const canvasWidth = document.querySelector("canvas");
-
     return (
-        <div className="controls" style={{"--control-width": `${canvasWidth?.clientWidth}px`} as React.CSSProperties}>
+        <div className="controls" style={{"--control-width": `${controlWidth}px`} as React.CSSProperties}>
             <div className={arrowPressed === -1 ? "leftPressed" : ""}
                 onPointerDown={() => {
                     InputManager.setLeft(true);

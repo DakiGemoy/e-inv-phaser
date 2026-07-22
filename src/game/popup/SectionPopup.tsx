@@ -10,6 +10,8 @@ interface Property{
 }
 
 export default function SectionPopup({section, onClose}: Property){
+    const Component = section.content();
+
     return (
         <PopupOverlay>
             <div className="close-bar">
@@ -20,7 +22,7 @@ export default function SectionPopup({section, onClose}: Property){
                 <span>{section.title}</span>
             </div>
             <div className="content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, officiis optio cum laborum dolore modi, ipsum magni odit consequatur hic obcaecati ducimus delectus suscipit veniam nam veritatis voluptatibus laboriosam qui.</p>
+                <Component />
             </div>
         </PopupOverlay>
     );

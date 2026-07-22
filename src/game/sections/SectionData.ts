@@ -1,3 +1,4 @@
+import type { ComponentType } from "react";
 import { SectionType } from "./SectionType";
 
 export interface SectionData {
@@ -5,4 +6,5 @@ export interface SectionData {
     type: SectionType;
     title: string;
     x: number;
+    content: ()=>ComponentType;
 }
