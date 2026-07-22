@@ -27,7 +27,8 @@ export default function VirtualControls() {
         const mutationObserver = new MutationObserver(() => {
                 const canvas = gameContainer.querySelector("canvas");
                 if (!canvas) return;
-                setControlWidth(canvas.clientWidth)
+                setControlWidth(canvas.clientWidth);
+                console.log("canvas ditemukan "+canvas.clientWidth);
         });
 
         mutationObserver.observe(gameContainer, {
