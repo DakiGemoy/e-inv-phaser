@@ -1,0 +1,31 @@
+/* .gallery-wrapper{
+    padding-right: 5px;
+} */
+
+.gallery-section::-webkit-scrollbar{
+    width:8px;
+}
+
+.gallery-section::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.gallery-section::-webkit-scrollbar-thumb:hover{
+    background:#8d5b25;
+}
+
+.gallery-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.gallery-item{
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img{
+    width: 100%;
+    display: block;
+}

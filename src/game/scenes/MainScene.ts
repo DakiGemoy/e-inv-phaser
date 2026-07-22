@@ -12,6 +12,8 @@ import SectionManager from "../manager/SectionManager";
 import { SectionType } from "../sections/SectionType";
 import SectionMarker from "../sections/SectionMarker";
 import Cloud from "../objects/Cloud";
+import GallerySection from "../sections/popup/GallerySection";
+import DefaultContent from "../sections/DefaultContent";
 
 export default class MainScene extends Phaser.Scene {
     private player!: Player;
@@ -45,13 +47,13 @@ export default class MainScene extends Phaser.Scene {
         //camera
         this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
 
-        const map = new SectionMarker(this,{id: "map", title: "Peta", type: SectionType.MAP, x: 1000}, PLAYER_Y);
+        const map = new SectionMarker(this,{id: "MAP", title: "Peta", type: SectionType.MAP, x: 1000, content: ()=>DefaultContent}, PLAYER_Y);
         this.sectionManager.register(map);
-        const galeri = new SectionMarker(this,{id: "GALLERY", title: "Galeri", type: SectionType.GALLERY, x: 2000}, PLAYER_Y);
+        const galeri = new SectionMarker(this,{id: "GALLERY", title: "Galeri", type: SectionType.GALLERY, x: 2000, content: ()=>GallerySection}, PLAYER_Y);
         this.sectionManager.register(galeri);
-        const rsvp = new SectionMarker(this,{id: "RSVP", title: "Reservasi", type: SectionType.RSVP, x: 3000}, PLAYER_Y);
+        const rsvp = new SectionMarker(this,{id: "RSVP", title: "Reservasi", type: SectionType.RSVP, x: 3000, content: ()=>DefaultContent}, PLAYER_Y);
         this.sectionManager.register(rsvp);
-        const gift = new SectionMarker(this,{id: "GIFT", title: "Gift", type: SectionType.GIFT, x: 4000}, PLAYER_Y);
+        const gift = new SectionMarker(this,{id: "GIFT", title: "Gift", type: SectionType.GIFT, x: 4000, content: ()=>DefaultContent}, PLAYER_Y);
         this.sectionManager.register(gift);
     }
 
