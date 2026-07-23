@@ -24,6 +24,8 @@ export default function VirtualControls() {
 
         if (!gameContainer) return;
 
+        console.log(gameContainer.querySelector("canvas"));
+
         const mutationObserver = new MutationObserver(() => {
                 const canvas = gameContainer.querySelector("canvas");
                 if (!canvas) return;
