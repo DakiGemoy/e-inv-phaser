@@ -37,7 +37,7 @@ export default function VirtualControls() {
 
     return (
         <div className="controls" style={{"--control-width": `${controlWidth}px`} as React.CSSProperties}>
-            <div className={arrowPressed === -1 ? "leftPressed" : ""}
+            <div className={(arrowPressed === -1 ? "arrow leftPressed" : "arrow")}
                 onPointerDown={() => {
                     InputManager.setLeft(true);
                     setArrowPressed(-1);
@@ -54,7 +54,7 @@ export default function VirtualControls() {
                 <img src={buttonL_img} alt="turn_left"  draggable={false} onContextMenu={(e)=>e.preventDefault()}/>
             </div>
 
-            <div className={activeSection ? "action-active" : "action"}
+            <div className={activeSection ? "action active" : "action"}
                 onPointerDown ={() => {
                     InputManager.setAction(true);
                     EventBus.emit(GameEvents.OPEN_SECTION, activeSection);
@@ -66,7 +66,7 @@ export default function VirtualControls() {
                 <img src={buttonOpen_img} alt="Open" draggable={false} onContextMenu={(e)=>e.preventDefault()}/>
             </div>
 
-            <div className={arrowPressed === 1 ? "rightPressed" : ""}
+            <div className={arrowPressed === 1 ? "arrow rightPressed" : "arrow"}
                 onPointerDown={() => {
                     InputManager.setRight(true);
                     setArrowPressed(1);
