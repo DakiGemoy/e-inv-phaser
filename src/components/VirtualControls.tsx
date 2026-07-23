@@ -28,20 +28,7 @@ export default function VirtualControls() {
 
         if(canvas){
             setControlWidth(canvas.clientWidth);
-            console.log("set controller value");
         }
-
-        // const mutationObserver = new MutationObserver(() => {
-        //         const canvas = gameContainer.querySelector("canvas");
-        //         if (!canvas) return;
-        //         setControlWidth(canvas.clientWidth);
-        //         console.log("canvas ditemukan "+canvas.clientWidth);
-        // });
-
-        // mutationObserver.observe(gameContainer, {
-        //     childList: true,
-        //     subtree: true
-        // });
 
         return () => {
             EventBus.off(GameEvents.SECTION_CHANGED, handler);
