@@ -24,19 +24,24 @@ export default function VirtualControls() {
 
         if (!gameContainer) return;
 
-        console.log(gameContainer.querySelector("canvas"));
+        const canvas = gameContainer.querySelector("canvas");
 
-        const mutationObserver = new MutationObserver(() => {
-                const canvas = gameContainer.querySelector("canvas");
-                if (!canvas) return;
-                setControlWidth(canvas.clientWidth);
-                console.log("canvas ditemukan "+canvas.clientWidth);
-        });
+        if(canvas){
+            setControlWidth(canvas.clientWidth);
+            console.log("set controller value");
+        }
 
-        mutationObserver.observe(gameContainer, {
-            childList: true,
-            subtree: true
-        });
+        // const mutationObserver = new MutationObserver(() => {
+        //         const canvas = gameContainer.querySelector("canvas");
+        //         if (!canvas) return;
+        //         setControlWidth(canvas.clientWidth);
+        //         console.log("canvas ditemukan "+canvas.clientWidth);
+        // });
+
+        // mutationObserver.observe(gameContainer, {
+        //     childList: true,
+        //     subtree: true
+        // });
 
         return () => {
             EventBus.off(GameEvents.SECTION_CHANGED, handler);
