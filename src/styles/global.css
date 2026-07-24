@@ -25,7 +25,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1c1c1c;
+  background: linear-gradient(
+      to bottom,
+      #7ec8ff,
+      /* #b8e6ff, */
+      #d8f5ff,
+      rgb(5, 239, 5)
+      );
 }
 
 .game-frame {
@@ -46,7 +52,8 @@ body {
 /* controls */
 .controls {
   position: absolute;
-  bottom: 10px;
+  /* bottom: 10px; */
+  bottom: var(--control-bottom);
   width: var(--control-width);
   display: flex;
   justify-content: space-evenly;

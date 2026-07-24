@@ -6,7 +6,7 @@ import type { SectionData } from "../game/sections/SectionData";
 import buttonL_img from "../assets/button_left.png";
 import buttonR_img from "../assets/button_right.png";
 import buttonOpen_img from "../assets/button_open.png";
-import { GAME_WIDTH } from "../game/config/GameConstant";
+import { GAME_WIDTH, CONTROL_POS } from "../game/config/GameConstant";
 
 export default function VirtualControls() {
     const [activeSection, setActiveSection] = useState<SectionData | null>(null);
@@ -36,7 +36,7 @@ export default function VirtualControls() {
     }, []);
 
     return (
-        <div className="controls" style={{"--control-width": `${controlWidth}px`} as React.CSSProperties}>
+        <div className="controls" style={{"--control-width": `${controlWidth}px`, "--control-bottom": `${CONTROL_POS}px`} as React.CSSProperties}>
             <div className={(arrowPressed === -1 ? "arrow leftPressed" : "arrow")}
                 onPointerDown={() => {
                     InputManager.setLeft(true);
