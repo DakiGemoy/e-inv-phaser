@@ -25,7 +25,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1c1c1c;
+  background: linear-gradient(
+      to bottom,
+      #7ec8ff,
+      /* #b8e6ff, */
+      #d8f5ff,
+      rgb(5, 239, 5)
+      );
 }
 
 .game-frame {
@@ -46,7 +52,8 @@ body {
 /* controls */
 .controls {
   position: absolute;
-  bottom: 5vh;
+  /* bottom: 10px; */
+  bottom: var(--control-bottom);
   width: var(--control-width);
   display: flex;
   justify-content: space-evenly;
@@ -55,36 +62,42 @@ body {
   backdrop-filter: blur(5px);
 }
 
-.controls div{
-    font-size:12px;
-    font-weight:bold;
-    transition: 0.2s; 
+.controls > div{
+  font-size:12px;
+  font-weight:bold;
+  transition: 0.2s; 
 
-    display: flex;
-    padding: 5px;
-    transition: 0.2s;
-    justify-content: center;
+  display: flex;
+  padding: 5px;
+  transition: 0.2s;
+  justify-content: center;
 }
 
-.controls div img {
+.controls img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 .rightPressed{
-  opacity: 75%;
+  opacity: 60%;
 }
 
 .leftPressed{
-  opacity: 75%;
+  opacity: 60%;
 }
 
 .action {
   opacity: 60%;
-  transform:scale(1.05);
+  width: 160px;
 }
 
-.action-active{
-  transform:scale(1.05);
+.action.active{
+  opacity: 100%;
+}
+
+.arrow{
+  width: 70px;
 }
 
 /* popup */
